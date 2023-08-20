@@ -16,10 +16,10 @@ pipeline {
                 //     docker build -t jenkins-pipeline .
                 //     cd ..
                 // """)
-                // script{
-                    docker.build("jenkins-pipeline-$GIT_BRANCH")
+                script{
+                    def jenk-image = docker.build("jenkins-pipeline-$GIT_BRANCH")
                     echo "Finished building docker image"
-                // }
+                }
 
             }
         }
