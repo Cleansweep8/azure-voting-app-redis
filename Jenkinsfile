@@ -17,7 +17,7 @@ pipeline {
                 //     cd ..
                 // """)
                 script{
-                    def jenk-image = docker.build("jenkins-pipeline-$GIT_BRANCH")
+                    def jenkinsImage = docker.build("jenkins-pipeline-$GIT_BRANCH")
                     echo "Finished building docker image"
                 }
 
