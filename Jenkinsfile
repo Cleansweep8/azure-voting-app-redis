@@ -9,17 +9,17 @@ pipeline {
         }
         stage('Docker Build') {
             steps{
-                // sh(script: 'docker images -a')
-                // sh(script: """
-                //     cd azure-vote
-                //     docker images -a
-                //     docker build -t jenkins-pipeline .
-                //     cd ..
-                // """)
-                script{
-                    def jenkinsImage = docker.build("jenkins-pipeline-$GIT_BRANCH")
-                    echo "Finished building docker image"
-                }
+                sh(script: 'docker images -a')
+                sh(script: """
+                    cd azure-vote
+                    docker images -a
+                    docker build -t jenkins-pipeline .
+                    cd ..
+                """)
+                // script{
+                //     def jenkinsImage = docker.build("jenkins-pipeline-$GIT_BRANCH")
+                //     echo "Finished building docker image"
+                // }
 
             }
         }
